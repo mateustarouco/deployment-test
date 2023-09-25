@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.10
+
+  pre_build:
+    commands:
+      - pip install awscli  # Instale a AWS CLI, se necessário
+      - pip install aws-sam-cli  # Instale o AWS SAM CLI
+      - sam --version  # Verifique a versão do SAM CLI
+
+  build:
+    commands:
+      - sam build  # Execute o comando de construção do SAM
